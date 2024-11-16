@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getMonth = exports.getDate = exports.getFullYear = void 0;
+const date = new Date();
+const getFullYear = () => date.getFullYear();
+exports.getFullYear = getFullYear;
+const getDate = () => date.getDate();
+exports.getDate = getDate;
+const getMonth = () => date.getMonth();
+exports.getMonth = getMonth;

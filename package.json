@@ -6,7 +6,8 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "prod": "nodemon src/server.ts",
+    "prod": "nodemon dist/server.js",
+    "prod:build": "npx tsc",
     "lint": "eslint --ext .js,.ts ./",
     "format": "prettier --write \"**/*.{js,ts,scss,html,md,json}\" --ignore-path .gitignore"
   },
