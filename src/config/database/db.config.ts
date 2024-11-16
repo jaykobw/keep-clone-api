@@ -34,7 +34,10 @@ export const useSequelizeConnection = new Sequelize({
 const initializeDBConnection = async (): Promise<void> => {
   try {
     await useSequelizeConnection.authenticate();
-    await useSequelizeConnection.sync({ force: false, alter: false });
+    await useSequelizeConnection.sync({
+      force: false,
+      alter: false,
+    });
     logger.info('Database connected succesfully!');
   } catch (e: unknown) {
     logger.info(
