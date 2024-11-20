@@ -59,17 +59,18 @@ export default class SessionController {
     const sessionId = req.params?.id;
 
     if (!sessionId) {
-      return next(new AppError('Session token is invalid', 400));
+      return next(new AppError('Session token is invalid or required', 400));
     }
 
     const destorySession = await Session.destroy({
       where: {
         token: sessionId,
+        userId,
       },
     });
 
     if (!destorySession) {
-      return next(new AppError('An internal error occured', 400));
+      return next(new AppError('Failed to end session', 400));
     }
 
     return res.status(204).json({
