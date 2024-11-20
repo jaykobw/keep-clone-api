@@ -84,8 +84,8 @@ export default class AuthController {
         username: user?.username,
         email: user?.email,
         avatar: `${process.env.APP_URL}/images/user/${user?.avatar}`,
-        rfid: jwtRefreshToken,
-        token: jwtAccessToken,
+        refreshtoken: jwtRefreshToken,
+        accesstoken: jwtAccessToken,
       },
     });
   }
