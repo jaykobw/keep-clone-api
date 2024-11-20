@@ -18,10 +18,10 @@ const DB_PASSWORD = process.env.DB_PASSWORD || `${config.password}`;
 const DB_PORT = Number(process.env.DB_PORT) || config.port;
 
 export const useSequelizeConnection = new Sequelize({
-  dialect: 'postgres',
+  dialect: 'mysql',
   host: '127.0.0.1',
   username: DB_USERNAME,
-  password: 'postgres',
+  password: '',
   database: DB_NAME,
   port: DB_PORT,
   logging:
