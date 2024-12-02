@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "38c0bd16-97b3-4b27-a97d-f47fa0e365a5",
+		"name": "Keep clone API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31937291"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hello@example.com\",\n    \"password\": \"userpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{prod-url}}/api/auth/login",
+							"host": [
+								"{{prod-url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"watenga.jacob@gmail.com\",\n    \"username\": \"jaykobpc\",\n    \"password\": \"userpassword\",\n    \"confirmPassword\": \"userpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/auth/signup",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/auth/logout",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Note",
+			"item": [
+				{
+					"name": "Get all notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/note",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get note by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/note/e97e40be-493f-47ef-a32e-7b5cbcfa53bd",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"e97e40be-493f-47ef-a32e-7b5cbcfa53bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new note",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Note 7\",\n    \"content\": \"This is a sample note\",\n    \"tileColor\": \"#fff\",\n    \"labelId\": \"e4a88e47-a6f1-4e3a-84a6-17206961af97\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/note",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"note"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update note",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"\",\n    \"content\": \"\",\n    \"tileColor\": \"\",\n    \"labelId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/note/xxxx-1-2",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"xxxx-1-2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete note",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/note/4e5dfb18-9cd3-4be4-b85e-5d134af8fa8b",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"note",
+								"4e5dfb18-9cd3-4be4-b85e-5d134af8fa8b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Label",
+			"item": [
+				{
+					"name": "Get all labels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/label",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"label"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get label by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/label/9ed14292-5e34-4075-a9bc-83bf189343e9",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"label",
+								"9ed14292-5e34-4075-a9bc-83bf189343e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new label",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Label 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/label",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"label"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update label",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Label 1 (updated)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/label/9ed14292-5e34-4075-a9bc-83bf189343e9",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"label",
+								"9ed14292-5e34-4075-a9bc-83bf189343e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete label",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/label/9ed14292-5e34-4075-a9bc-83bf189343e9",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"label",
+								"9ed14292-5e34-4075-a9bc-83bf189343e9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/user/me",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update username",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/user/update-username",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-username"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentPassword\": \"\",\n    \"newPassword\": \"\",\n    \"confirmPassword\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/user/update-username",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-username"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update avatar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/user/update-avatar",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Get all sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/session",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete session",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/session/xxx-id",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"session",
+								"xxx-id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Archive",
+			"item": [
+				{
+					"name": "Get all archive notes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{dev-url}}/api/v1/archive",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"archive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update note archive status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dev-url}}/api/v1/archive/79ee594c-b229-494b-bd78-0d0a2a7647c7",
+							"host": [
+								"{{dev-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"archive",
+								"79ee594c-b229-494b-bd78-0d0a2a7647c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
